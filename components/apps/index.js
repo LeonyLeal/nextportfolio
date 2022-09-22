@@ -10,7 +10,7 @@ function Apps(props) {
       <Title>{insTitle}</Title>
       <Description>{props.children}</Description>
       <Album>
-        <Preview src={insPreview}></Preview>
+        <Preview alt="icone-repositorio" src={insPreview}></Preview>
       </Album>
     </Container>
   );

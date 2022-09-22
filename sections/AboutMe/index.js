@@ -65,7 +65,7 @@ export default function AboutMe() {
               <Span id="Phrase">Focado em desenvolver o melhor de mim</Span>
             </TextWrapper>
             <ProfileWrapper id="DivWrapper">
-              <Profile src={Perfil.src} id="Profile_Photo"></Profile>
+              <Profile alt="Foto Perfil" src={Perfil.src} id="Profile_Photo"></Profile>
               <Carousel id="Carousel">{words}</Carousel>
             </ProfileWrapper>
           </AboutMeWrapper>

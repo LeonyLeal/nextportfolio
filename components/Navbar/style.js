@@ -89,7 +89,7 @@ export const MenuLink = styled.a`
 
 export const Svg = styled.div`
   position: fixed;
-  top: 1em;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
@@ -107,7 +107,7 @@ export const Svg = styled.div`
   }
 `;
 
-export const Burger = styled.a`
+export const Burger = styled.p`
   background: url(${(props) => props.theme.burger.src});
   visibility: visible;
   background-position: center center;
@@ -121,7 +121,7 @@ export const Burger = styled.a`
     visibility: hidden;
   }
 `;
-export const ThemeBtn = styled.a`
+export const ThemeBtn = styled.p`
   visibility: visible;
   background: url(${(props) => props.theme.btnTheme.src});
   background-position: center center;
