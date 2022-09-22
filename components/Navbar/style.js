@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Nav = styled.nav`
   visibility: hidden;
   background-size: contain;
-  background: url(${(props) => props.theme.backgroundM}) no-repeat center bottom,
+  background: url(${(props) => props.theme.backgroundM.src}) no-repeat center bottom,
     ${(props) => props.theme.colors.primary};
   user-select: none;
   position: fixed;
@@ -108,7 +108,7 @@ export const Svg = styled.div`
 `;
 
 export const Burger = styled.a`
-  background: url(${(props) => props.theme.burger});
+  background: url(${(props) => props.theme.burger.src});
   visibility: visible;
   background-position: center center;
   background-repeat: no-repeat;
@@ -123,7 +123,7 @@ export const Burger = styled.a`
 `;
 export const ThemeBtn = styled.a`
   visibility: visible;
-  background: url(${(props) => props.theme.btnTheme});
+  background: url(${(props) => props.theme.btnTheme.src});
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -131,7 +131,7 @@ export const ThemeBtn = styled.a`
   height: 2.2rem;
   cursor: pointer;
   :hover {
-    background: url(${(props) => props.theme.btnThemeFill});
+    background: url(${(props) => props.theme.btnThemeFill.src});
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
