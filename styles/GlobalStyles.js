@@ -80,7 +80,7 @@ body{
 export const Title = styled.h1`
   text-align: center;
   font-weight: ${fonts.weight.Normal};
-
+  user-select: none;
   @media (min-width: 600px) {
     font-size: 2.5rem;
   }
@@ -91,7 +91,7 @@ export const Span = styled.p`
   text-align: end;
   padding-right: 1em;
   font-weight: ${fonts.weight.Light};
-
+  user-select: none;
   @media (min-width: 600px) {
     font-size: 1rem;
   }
@@ -102,7 +102,8 @@ export const Text = styled.p`
   padding: 0 0.3em;
   text-align: center;
   font-size: ${fonts.size.UltraSmall};
-
+  user-select: none;
+  -webkit-user-drag:none;
   @media (min-width: 600px) {
     font-size: ${fonts.size.Normal};
     max-width: 30em;

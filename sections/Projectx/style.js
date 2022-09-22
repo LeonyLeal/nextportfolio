@@ -46,4 +46,5 @@ export const Link = styled.a`
   text-align: center;
   cursor: pointer;
   font-size: 1.2rem;
+  -webkit-user-drag:none;
 `;

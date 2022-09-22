@@ -14,6 +14,7 @@ export const Album = styled.div`
 `;
 export const Title = styled.h1`
   text-align: center;
+  -webkit-user-drag:none;
 `;
 
 export const Description = styled.p`

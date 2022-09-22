@@ -26,6 +26,8 @@ export const SociaLink = styled.a`
   font-weight: 600;
   margin: 0.3em 1em;
   transition: all 0.5s ease-in-out;
+  user-select: none;
+  -webkit-user-drag:none;
 
   &:nth-child(1) {
     background-image: url(${(props) => props.theme.social.fb.src});

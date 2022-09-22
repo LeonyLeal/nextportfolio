@@ -208,6 +208,7 @@ export const Carousel = styled.p`
   font-size: 2rem;
   animation: all 1s ease-in-out;
   user-select: none;
+  -webkit-user-drag:none;
 `
 
 export const Content = styled.div`
@@ -248,6 +249,7 @@ export const Name = styled.h1`
   font-size: 2rem;
   font-weight: 400;
   font-style: italic;
+  -webkit-user-drag:none;
 
   @media (min-width: 600px) {
     padding-top: 1.5em;
@@ -261,6 +263,7 @@ export const Profile = styled.img`
   border-radius: 1.3em;
   border: 5px solid ${props => props.theme.colors.primary};
   user-select: none;
+  -webkit-user-drag:none;
   margin-right: 1em;
 
   @media (min-width: 950px) {

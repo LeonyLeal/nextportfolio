@@ -80,7 +80,7 @@ export const MenuLink = styled.a`
   cursor: pointer;
   text-decoration: none;
   font-size: 2rem;
-
+  -webkit-user-drag:none;
   @media (min-width: 600px) {
     padding: 0 1em;
     font-size: 1.4rem;

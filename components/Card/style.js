@@ -109,4 +109,5 @@ export const Description = styled.p`
   z-index: 100;
   text-align: center;
   user-select: none;
+  -webkit-user-drag:none;
 `;
