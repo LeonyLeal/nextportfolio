@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
       <>
         <Head>
           <title>Leony</title>
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="shortcut icon" href="/favicon.ico" />
           <link rel="apple-touch-icon" href="/logo192.png" />
           <meta name='description' content='Portifólio Leony Leal, Desenvolvedor Fullstack, Trabalho com React, Next, Vue, Django, Axios' />
         </Head>
