@@ -12,7 +12,7 @@ function Projectxs(props) {
           return (
             <ProjectContainer key={repo.id} id={repo.name}>
               <Apps title={repo.name} preview={props.preview}>
-                <Link id="Desafio Crud" target="_blank" href={repo.html_url}>
+                <Link id={repo.name} target="_blank" href={repo.html_url}>
                   Ir para o repositorio
                 </Link>
               </Apps>

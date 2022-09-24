@@ -9,42 +9,42 @@ function Socials() {
       <Title>Socials</Title>
       <SocialWrapper>
         <SociaLink
-          id="social"
+          id="social-facebook"
           target="_blank"
           href="https://www.facebook.com/Leony9991/"
         >
           Facebook
         </SociaLink>
         <SociaLink
-          id="social"
+          id="social-figma"
           target="_blank"
           href="https://www.figma.com/@leony"
         >
           Figma
         </SociaLink>
         <SociaLink
-          id="social"
+          id="social-github"
           target="_blank"
           href="https://www.github.com/LeonyLeal"
         >
           Github
         </SociaLink>
         <SociaLink
-          id="social"
+          id="social-instagram"
           target="_blank"
           href="https://www.instagram.com/leony.1999/"
         >
           Instagram
         </SociaLink>
         <SociaLink
-          id="social"
+          id="social-linkedin"
           target="_blank"
           href="https://www.linkedin.com/in/leony-leal99/"
         >
           Linkedin
         </SociaLink>
         <SociaLink
-          id="social"
+          id="social-twitter"
           target="_blank"
           href="https://twitter.com/Leony_1999"
         >

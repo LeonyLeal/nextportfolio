@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const SocialContainer = styled.section`
-  margin-top: 0.1em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,9 +27,11 @@ export const SociaLink = styled.a`
   font-size: 1rem;
   font-weight: 600;
   margin: 0.3em .2em;
-  transition: all 0.5s ease-in-out;
   user-select: none;
   -webkit-user-drag:none;
+  :hover{
+    transition: all 0.5s ease-in-out;
+  }
 
   @media (min-width: 400px){
     font-size: 1.2rem;

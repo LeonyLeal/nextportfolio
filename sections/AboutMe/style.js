@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components'
 
 const BubblesAni = keyframes`
  0% {
+    transform: translateY(0);
     opacity: 0.2;
     visibility: visible;
 }
@@ -24,16 +25,16 @@ const BubblesAni = keyframes`
     opacity: 0.0;
 }
 100% {
-    bottom: 90%;
+    transform: translateY(-450px);
     opacity: 0.0;
 }
 `
 const sideWays = keyframes`
        0% { 
-        margin:0 0em;
+       transform: translateX(0);
     }
     100% { 
-        margin:0 3em;
+      transform: translateX(25%)
     }
 `
 
@@ -64,8 +65,8 @@ export const Bubble = styled.div`
   border-radius: 100%;
   background: ${props => props.theme.colors.bubble};
   opacity: 1;
-  animation: ${BubblesAni} 6s linear infinite,
-    ${sideWays} 1s ease-in-out alternate infinite;
+  animation: ${sideWays} 1s ease-in-out alternate infinite ,${BubblesAni} 6s linear infinite;
+    
 
   &#Bubble:nth-child(1) {
     height: 1.5em;
