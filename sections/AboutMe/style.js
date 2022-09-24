@@ -259,17 +259,21 @@ export const Name = styled.h1`
   }
 `
 export const Profile = styled.img` 
-  min-height: 200px;
-  max-height: 350px;
+  width: calc(100% - 50px);
+  max-width: 300px;
   border-radius: 1.3em;
   border: 5px solid ${props => props.theme.colors.primary};
   user-select: none;
   -webkit-user-drag:none;
-  margin-right: 1em;
+
+  @media(min-width: 600px){
+    width: 350px;
+  }
 
   @media (min-width: 950px) {
-    max-width: auto;
-    max-height: 375px;
+    width: 300px;
+    max-width: none;
+    max-height: 400px;
     margin-right: 0;
   }
 `

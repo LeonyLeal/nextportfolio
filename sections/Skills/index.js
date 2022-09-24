@@ -24,7 +24,7 @@ function Skills() {
   };
 
   const next = () => {
-    if (slideRef.current.scrollLeft > 850) {
+    if (slideRef.current.scrollLeft >= 650) {
       return (slideRef.current.scrollLeft -= 945);
     }
     return (slideRef.current.scrollLeft += 200);

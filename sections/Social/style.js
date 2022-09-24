@@ -8,7 +8,10 @@ export const SocialContainer = styled.section`
 `;
 export const SocialWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+  @media (min-width: 250px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
   @media (min-width: 600px) {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -22,12 +25,17 @@ export const SociaLink = styled.a`
   background-position: start center;
   background-repeat: no-repeat;
   color: ${(props) => props.theme.colors.secondary};
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
-  margin: 0.3em 1em;
+  margin: 0.3em .2em;
   transition: all 0.5s ease-in-out;
   user-select: none;
   -webkit-user-drag:none;
+
+  @media (min-width: 400px){
+    font-size: 1.2rem;
+    margin: 0.3em 1em;
+  }
 
   &:nth-child(1) {
     background-image: url(${(props) => props.theme.social.fb.src});

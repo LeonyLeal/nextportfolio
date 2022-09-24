@@ -13,7 +13,7 @@ export const SkillsContainer = styled.section`
 `;
 
 export const Slide = styled.div`
-  width: 21em;
+  width: -webkit-fill-available;
   overflow: hidden;
 
   @media (min-width: 1200px) {
@@ -34,11 +34,11 @@ export const Slide = styled.div`
 `;
 
 export const SlideButton = styled.div`
-  position: absolute;
+  position: sticky;
   width: 1.5em;
   height: 1.5em;
   background: ${(props) => props.theme.colors.secondary};
-  box-shadow: 0px 0px 5px 1px ${(props) => props.theme.colors.secondary};
+  box-shadow: 0px 0px 3px 1px ${(props) => props.theme.colors.secondary};
   color: ${(props) => props.theme.colors.primary};
   border-radius: 100%;
   text-align: center;
@@ -46,16 +46,21 @@ export const SlideButton = styled.div`
   cursor: pointer;
   user-select: none;
 
-  @media (min-width: 1200px) {
+  @media (min-width: 600px) {
     visibility: hidden;
   }
 
   :first-child {
-    margin: 15em 0 0 -1em;
+    top: 50%;
+    left: 2%;
+    @media (min-width: 400px){
+      left: 5%;
+    }
   }
 
   :nth-child(2) {
-    margin: 15em 0 0 20.4em;
+    top: 50%;
+    left: 90%;
   }
 `;
 
