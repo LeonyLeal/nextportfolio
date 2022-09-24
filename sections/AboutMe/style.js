@@ -209,6 +209,7 @@ export const Carousel = styled.p`
   animation: all 1s ease-in-out;
   user-select: none;
   -webkit-user-drag:none;
+  width: fit-content;
 `
 
 export const Content = styled.div`
