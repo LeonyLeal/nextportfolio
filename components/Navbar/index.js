@@ -26,16 +26,16 @@ function Navbar(props) {
   return (
     <Nav ref={NavRef} id="Nav">
       <Menu ref={NavRef} id="Menu">
-        <MenuLink onClick={onSectionClick} href="#Section-A">
+        <MenuLink onClick={onSectionClick} href="/#Section-A">
           Quem?
         </MenuLink>
-        <MenuLink onClick={onSectionClick} href="#Section-B">
+        <MenuLink onClick={onSectionClick} href="/#Section-B">
           Social
         </MenuLink>
-        <MenuLink onClick={onSectionClick} href="#Section-C">
+        <MenuLink onClick={onSectionClick} href="/#Section-C">
           Skills
         </MenuLink>
-        <MenuLink onClick={onSectionClick} href="#Section-D">
+        <MenuLink onClick={onSectionClick} href="/#Section-D">
           Projects
         </MenuLink>
       </Menu>

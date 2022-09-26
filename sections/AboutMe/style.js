@@ -1,13 +1,12 @@
-import styled, { keyframes } from 'styled-components'
-
+import styled, { keyframes } from "styled-components";
 
 const BubblesAni = keyframes`
- 0% {
+0% {
     transform: translateY(0);
     opacity: 0.2;
     visibility: visible;
 }
- 10% {
+10% {
     opacity: 0.5;
     visibility: visible;
 }
@@ -17,18 +16,29 @@ const BubblesAni = keyframes`
 30%{
     opacity: 1;
 }
-
-80%{
-    opacity: 0.6;
+40%{
+  opacity: 1;
 }
-97%{
-    opacity: 0.0;
+50%{
+  opacity: 1;
+}
+60%{
+  opacity: 1;
+}
+70%{
+  opacity: 0.8;
+}
+80%{
+  opacity: 0.5;
+}
+90%{
+ opacity: 0.2;
 }
 100% {
     transform: translateY(-450px);
-    opacity: 0.0;
+    opacity: 0;
 }
-`
+`;
 const sideWays = keyframes`
        0% { 
        transform: translateX(0);
@@ -36,7 +46,7 @@ const sideWays = keyframes`
     100% { 
       transform: translateX(25%)
     }
-`
+`;
 
 export const Bubbles = styled.div`
   display: flex;
@@ -53,20 +63,27 @@ export const Bubbles = styled.div`
   overflow: hidden;
   z-index: 1;
 
-  @media(min-width:600px){
-      min-height:29em;
+  &#Bubbles-404 {
+    width: 100%;
+    top: 0 !important;
+    height: 100%;
+    max-height: none;
   }
-`
+
+  @media (min-width: 600px) {
+    min-height: 29em;
+  }
+`;
 
 export const Bubble = styled.div`
   height: 3em;
   width: 3em;
   position: absolute;
   border-radius: 100%;
-  background: ${props => props.theme.colors.bubble};
+  background: ${(props) => props.theme.colors.bubble};
   opacity: 1;
-  animation: ${sideWays} 1s ease-in-out alternate infinite ,${BubblesAni} 6s linear infinite;
-    
+  animation: ${sideWays} 1s ease-in-out alternate infinite,
+    ${BubblesAni} 6s linear infinite;
 
   &#Bubble:nth-child(1) {
     height: 1.5em;
@@ -120,8 +137,8 @@ export const Bubble = styled.div`
   &#Bubble:nth-child(5) {
     visibility: hidden !important;
 
-    height: .9em;
-    width: .9em;
+    height: 0.9em;
+    width: 0.9em;
 
     bottom: -30%;
     left: 50%;
@@ -181,7 +198,7 @@ export const Bubble = styled.div`
       visibility: visible !important;
     }
   }
-`
+`;
 
 export const AboutMeWrapper = styled.div`
   position: relative;
@@ -193,14 +210,14 @@ export const AboutMeWrapper = styled.div`
     justify-content: center;
     align-items: center;
   }
-`
+`;
 
 export const Background = styled.div`
-  background: ${props => props.theme.colors.aboutMeBackground};
+  background: ${(props) => props.theme.colors.aboutMeBackground};
   background-size: cover;
   text-align: center;
   background-position: center center;
-`
+`;
 
 export const Carousel = styled.p`
   margin: 0 auto;
@@ -209,9 +226,9 @@ export const Carousel = styled.p`
   font-size: 2rem;
   animation: all 1s ease-in-out;
   user-select: none;
-  -webkit-user-drag:none;
+  -webkit-user-drag: none;
   width: fit-content;
-`
+`;
 
 export const Content = styled.div`
   margin: 0 auto;
@@ -223,7 +240,7 @@ export const Content = styled.div`
     justify-content: center;
     align-items: flex-start;
   }
-`
+`;
 
 export const ContentWrapper = styled.section`
   display: flex;
@@ -232,7 +249,7 @@ export const ContentWrapper = styled.section`
   align-content: stretch;
   min-height: fit-content;
   margin-top: 5em;
-`
+`;
 
 export const MeWrapper = styled.div`
   min-height: 100vh;
@@ -240,7 +257,7 @@ export const MeWrapper = styled.div`
   @media (min-width: 600px) {
     display: flex;
   }
-`
+`;
 
 export const Name = styled.h1`
   z-index: 10;
@@ -251,23 +268,23 @@ export const Name = styled.h1`
   font-size: 2rem;
   font-weight: 400;
   font-style: italic;
-  -webkit-user-drag:none;
+  -webkit-user-drag: none;
 
   @media (min-width: 600px) {
     padding-top: 1.5em;
     text-align: center;
     padding-right: 40%;
   }
-`
-export const Profile = styled.img` 
+`;
+export const Profile = styled.img`
   width: calc(100% - 50px);
   max-width: 300px;
   border-radius: 1.3em;
-  border: 5px solid ${props => props.theme.colors.primary};
+  border: 5px solid ${(props) => props.theme.colors.primary};
   user-select: none;
-  -webkit-user-drag:none;
+  -webkit-user-drag: none;
 
-  @media(min-width: 600px){
+  @media (min-width: 600px) {
     width: 350px;
   }
 
@@ -277,7 +294,7 @@ export const Profile = styled.img`
     max-height: 400px;
     margin-right: 0;
   }
-`
+`;
 
 export const ProfileWrapper = styled.div`
   @media (min-width: 600px) {
@@ -288,7 +305,7 @@ export const ProfileWrapper = styled.div`
     align-content: flex-end;
     align-items: center;
   }
-`
+`;
 
 export const TextWrapper = styled.div`
   @media (min-width: 600px) {
@@ -300,4 +317,4 @@ export const TextWrapper = styled.div`
     justify-content: center;
     flex-wrap: wrap;
   }
-`
+`;
