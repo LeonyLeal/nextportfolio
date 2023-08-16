@@ -219,17 +219,6 @@ export const Background = styled.div`
   background-position: center center;
 `;
 
-export const Carousel = styled.p`
-  margin: 0 auto;
-  padding-bottom: 1em;
-  font-weight: lighter;
-  font-size: 2rem;
-  animation: all 1s ease-in-out;
-  user-select: none;
-  -webkit-user-drag: none;
-  width: fit-content;
-`;
-
 export const Content = styled.div`
   margin: 0 auto;
   @media (min-width: 600px) {

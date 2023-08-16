@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Perfil from "../../public/img/Perfil.jpg";
 import { Span, Text, Title } from "../../styles/GlobalStyles";
 import {
@@ -6,7 +6,6 @@ import {
   Background,
   Bubble,
   Bubbles,
-  Carousel,
   Content,
   ContentWrapper,
   Name,
@@ -14,40 +13,9 @@ import {
   ProfileWrapper,
   TextWrapper,
 } from "./style";
+import { Carousel } from "../../components/CarouselMemo";
 
 export default function AboutMe() {
-  const word = ["Front-end", "Back-end", "Designer"]; //Array das palavras
-
-  const [index, setindex] = useState(0); //index para indicar a posição do Array Word[index]
-  const [words, setWords] = useState(""); // estado inicial das palavras
-
-  const carouselWord = () => {
-    const pos = index + 1 === word.length ? 0 : index + 1; //se o index + 1 for igual ao tamanho do array == 3, então vai pra zero, caso contrario add +1
-    setindex(pos); //addicionando a constante na posição do array
-    const carousel = document.getElementById("Carousel")
-    carousel.animate(
-      [
-        { opacity: 0, transform: "translate(-1em, 0)" },
-        { opacity: 1, transform: "translate(0, 0)" },
-      ],
-      { duration: 900 }
-    ); //Animação de opacidade e indo da esquerda pra direita
-    carousel.animate(
-      [
-        { opacity: 1, transform: "translate(0, 0)" },
-        { opacity: 0, transform: "translate(1em, 0)" },
-      ],
-      { delay: 2200, duration: 800 }
-    );
-  };
-
-    setTimeout(carouselWord, 2900);  // delay para cada iteração
-
-
-  useEffect(() => {
-    setWords(word[index]);
-    // eslint-disable-next-line
-  }, [word]);
   return (
     <ContentWrapper id="Section-A">
       <Title id="Who">Quem?</Title>
@@ -65,8 +33,12 @@ export default function AboutMe() {
               <Span id="Phrase">Focado em desenvolver o melhor de mim</Span>
             </TextWrapper>
             <ProfileWrapper id="DivWrapper">
-              <Profile alt="Foto Perfil" src={Perfil.src} id="Profile_Photo"></Profile>
-              <Carousel id="Carousel">{words}</Carousel>
+              <Profile
+                alt="Foto Perfil"
+                src={Perfil.src}
+                id="Profile_Photo"
+              ></Profile>
+              <Carousel />
             </ProfileWrapper>
           </AboutMeWrapper>
         </Content>
