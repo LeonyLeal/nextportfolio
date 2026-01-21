@@ -46,11 +46,11 @@ export async function getStaticProps() {
   const AnosExperiencia = await AnosDeExperiencia("2022-11-01");
   const comando =  await pegarComandoAleatorio(rodapeComandos);
   const res = await fetch(URL, { headers: {
-    "Authorization": `token ${token}`,
+    "Authorization": `Bearer  ${token}`,
     "Accept": "application/vnd.github.v3+json"
   }});
   const resProfile = await fetch(profileInfo, { headers: {
-    "Authorization": `token ${token}`,
+    "Authorization": `Bearer  ${token}`,
     "Accept": "application/vnd.github.v3+json"
   }});
   const resRepos = await res.json()
