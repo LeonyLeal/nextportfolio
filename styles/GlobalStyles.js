@@ -67,6 +67,7 @@ body{
     box-sizing: border-box;
     font-family: "Nunito";
     margin: 0;
+    overflow:clip;
     background-color: ${(props) => props.theme.colors.primary}; 
     color: ${(props) => props.theme.colors.secondary}; 
     scroll-behavior: smooth;
@@ -74,6 +75,10 @@ body{
       color: ${(props) => props.theme.colors.secondary};
     }
    
+}
+
+body.modal-open {
+  overflow: hidden;
 }
 `;
 

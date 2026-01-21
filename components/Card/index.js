@@ -2,24 +2,18 @@ import React from "react";
 import { Container, Circle, Svg, Description } from "./style";
 
 function Card(props) {
-  const insWave = props.wave;
-  const insIcon = props.icon;
-  const insShadow = props.shadow;
-  const insCardFill = props.card_fill;
-  const insShadowHover = props.shadow_hover;
-  const textIns = props.children;
+  const {wave ,icon, shadow, card_fill, shadow_hover,children, ...rest} = props;
 
-  //Card Components
   return (
-    <Container wave={insWave} shadow_hover={insShadowHover} id="card">
-      <Circle card_fill={insCardFill} id="background" />
+    <Container wave={wave} shadow_hover={shadow_hover} id="card" {...rest} >
+      <Circle card_fill={card_fill} id="background" />
       <Svg
         id="svg"
-        icon={insIcon}
-        shadow={insShadow}
-        shadow_hover={insShadowHover}
+        icon={icon}
+        shadow={shadow}
+        shadow_hover={shadow_hover}
       />
-      <Description id="description">{textIns}</Description>
+      <Description id="description">{children}</Description>
     </Container>
   );
 }

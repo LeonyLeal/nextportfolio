@@ -46,7 +46,7 @@ export const Nav = styled.nav`
   @media (min-width: 600px) {
     visibility: hidden !important;
     background: transparent;
-    top: 0.5em;
+    top: 0em;
     height: 44px;
   }
 `;
@@ -66,14 +66,23 @@ export const Menu = styled.div`
 
   @media (min-width: 600px) {
     visibility: visible;
-    min-height: 2.75em;
+    min-height: 3.7em;
     flex-direction: row;
-    margin: 0 3.125em;
-    width: fit-content;
+    margin:0 0;
+    padding:0;
+    width: 100%;
     text-align: center;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     justify-items: center;
+    background: rgba(0, 0, 0, 0.09);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(0, 0, 0, 0.5),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1),
+    inset 0 0 8px 4px rgba(0, 0, 0, 0.4);
   }
 `;
 export const MenuLink = styled.a`
@@ -94,7 +103,6 @@ export const Svg = styled.div`
   right: 0;
   bottom: 0;
   margin: 0px 1em;
-
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -104,6 +112,7 @@ export const Svg = styled.div`
 
   @media (min-width: 600px) {
     visibility: hidden;
+    margin: 0px 0em;
   }
 `;
 
@@ -135,5 +144,10 @@ export const ThemeBtn = styled.p`
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
+  }
+     @media (min-width: 600px) {
+    position:fixed;
+    top:-4px;
+    right:24px;
   }
 `;

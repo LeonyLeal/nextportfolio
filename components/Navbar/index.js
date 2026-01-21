@@ -11,7 +11,7 @@ function Navbar(props) {
     NavRef.current.style.visibility = checked ? "visible" : "hidden";
     NavRef.current.parentElement.parentElement.style.overflow = checked
       ? "hidden"
-      : "scroll";
+      : "clip";
     NavRef.current.style.animation = checked
       ? "outIn 1s forwards"
       : "inOut 1s forwards";
@@ -27,7 +27,7 @@ function Navbar(props) {
     <Nav ref={NavRef} id="Nav">
       <Menu ref={NavRef} id="Menu">
         <MenuLink onClick={onSectionClick} href="/#Section-A">
-          Quem?
+          Sobre mim
         </MenuLink>
         <MenuLink onClick={onSectionClick} href="/#Section-B">
           Social

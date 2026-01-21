@@ -50,9 +50,10 @@ const sideWays = keyframes`
 
 export const Bubbles = styled.div`
   display: flex;
-  min-height: 30.5em;
-  max-height: 33.5em;
-  top: 30%;
+  height: 70%;
+  max-height: 100%;
+  top: 25%;
+  left:0;
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
@@ -69,9 +70,11 @@ export const Bubbles = styled.div`
     height: 100%;
     max-height: none;
   }
-
   @media (min-width: 600px) {
-    min-height: 29em;
+    height: 40em;
+  }
+     @media (min-width: 800px) {
+    height: 32em;
   }
 `;
 
@@ -203,12 +206,17 @@ export const Bubble = styled.div`
 export const AboutMeWrapper = styled.div`
   position: relative;
   z-index: 10;
+  display:flex;
+  flex-direction:column;
+  row-gap: 16px;
+  
   @media (min-width: 600px) {
     display: flex;
     flex-direction: row;
     align-content: center;
     justify-content: center;
     align-items: center;
+    column-gap: 24px; 
   }
 `;
 
@@ -217,6 +225,7 @@ export const Background = styled.div`
   background-size: cover;
   text-align: center;
   background-position: center center;
+  padding:24px;
 `;
 
 export const Content = styled.div`
@@ -267,20 +276,20 @@ export const Name = styled.h1`
 `;
 export const Profile = styled.img`
   width: calc(100% - 50px);
-  max-width: 300px;
-  border-radius: 1.3em;
-  border: 5px solid ${(props) => props.theme.colors.primary};
+  max-width: 200px;
+  border-radius: 10em;
+  border: 5px solid rgba(255,255,255,0.8);
   user-select: none;
   -webkit-user-drag: none;
 
   @media (min-width: 600px) {
-    width: 350px;
+    width: 360px;
   }
 
   @media (min-width: 950px) {
-    width: 300px;
+    width: 240px;
     max-width: none;
-    max-height: 400px;
+    max-height: 426px;
     margin-right: 0;
   }
 `;

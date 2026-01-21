@@ -1,4 +1,3 @@
-import React from "react";
 import { Title } from "../../styles/GlobalStyles";
 import { ProjectWrapper, ProjectContainer, Link, Grid } from "./style";
 import Apps from "../../components/apps";
@@ -6,10 +5,14 @@ import Apps from "../../components/apps";
 function Projectxs(props) {
   return (
     <ProjectWrapper id="Section-D">
-      <Title id="Projects">Projetos</Title>
+      <Title id="Projects">Github</Title>
       <Grid>
-        {props.repos.map((repo) => {
-          return (
+        {props.repos
+          .filter(
+            (item) =>
+              !item.topics.some(topic => props.ForbiddenTopics.includes(topic)),
+          )
+          .map((repo) => (
             <ProjectContainer key={repo.id} id={repo.name}>
               <Apps title={repo.name} preview={props.preview}>
                 <Link id={repo.name} target="_blank" href={repo.html_url}>
@@ -17,8 +20,7 @@ function Projectxs(props) {
                 </Link>
               </Apps>
             </ProjectContainer>
-          );
-        })}
+          ))}
       </Grid>
     </ProjectWrapper>
   );

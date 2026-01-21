@@ -1,5 +1,3 @@
-import { useEffect, useMemo, useState } from "react";
-import Perfil from "../../public/img/Perfil.jpg";
 import { Span, Text, Title } from "../../styles/GlobalStyles";
 import {
   AboutMeWrapper,
@@ -14,30 +12,38 @@ import {
   TextWrapper,
 } from "./style";
 import { Carousel } from "../../components/CarouselMemo";
+import rodapeComandos from "../../constants/commands"
 
-export default function AboutMe() {
+export default function AboutMe({ AnosExperiencia, comando,  owner }) {
   return (
     <ContentWrapper id="Section-A">
-      <Title id="Who">Quem?</Title>
+      <Title id="Who">Sobre mim</Title>
       <Background id="Background">
         <Content id="Content">
           <Name id="My_Name">Leony Leal</Name>
           <AboutMeWrapper id="About_Me_Wrapper">
             <TextWrapper id="Text_Wrapper">
               <Text id="Description">
-                Desenvolvedor Front-end e Back-End e tenho como objetivo
-                colocação na área como Desenvolvedor Junior. procuro adquirir
-                novas habilidades para expandir o meu leque de habilidades que
-                tragam retorno de valor em projetos.{" "}
+                  Atuo no mercado de trabalho com desenvolvimento de software <strong>há {AnosExperiencia}  anos</strong>, e estudando desde 2018.
+                  Tenho experiência no desenvolvimento de sistemas distribuídos,
+                  envolvendo front-end, back-end, testes e infraestrutura.
+                  Trabalho com arquiteturas monolíticas e orientadas a serviços,
+                  incluindo microsserviços.
+                  Tenho experiência com arquiteturas como <em>Ports and Adapters</em> e <em>MVVM</em>, garantindo
+                  clareza e manutenibilidade dos sistemas.
+                  Experiência em automação de ambientes,
+                  containerização com <strong>Docker</strong> e pipelines de <strong>CI/CD</strong>.
               </Text>
-              <Span id="Phrase">Focado em desenvolver o melhor de mim</Span>
+              <Span id="Phrase">
+                {comando}
+              </Span>
             </TextWrapper>
             <ProfileWrapper id="DivWrapper">
               <Profile
                 alt="Foto Perfil"
-                src={Perfil.src}
+                src={owner.avatar_url}
                 id="Profile_Photo"
-              ></Profile>
+              />
               <Carousel />
             </ProfileWrapper>
           </AboutMeWrapper>
@@ -57,3 +63,5 @@ export default function AboutMe() {
     </ContentWrapper>
   );
 }
+  
+

@@ -17,12 +17,12 @@ function MyApp({ Component, pageProps }) {
       <GlobalStyles />
       <>
         <Head>
-          <title>Leony</title>
+          <title>Leony.dev</title>
           <link rel="shortcut icon" href="/favicon.ico" />
           <link rel="icon" type="image/png" sizes="32x32" href="/favico.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/favico.png" />
           <link rel="apple-touch-icon" href="/logo192.png" />
-          <meta name='description' content='Portifólio Leony Leal, Desenvolvedor Fullstack, Trabalho com React, Next, Vue, Django, Axios' />
+          <meta name='description' content='Portifólio Leony Leal, Desenvolvedor Fullstack'/>
         </Head>
         <Navbar onChangeTheme={onThemeClick} />
         <Component {...pageProps} />

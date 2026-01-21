@@ -9,9 +9,6 @@ function Apps(props) {
     <Container>
       <Title>{insTitle}</Title>
       <Description>{props.children}</Description>
-      <Album>
-        <Preview alt="icone-repositorio" src={insPreview}></Preview>
-      </Album>
     </Container>
   );
 }

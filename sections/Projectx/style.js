@@ -21,9 +21,9 @@ export const ProjectWrapper = styled.section`
 
 export const Grid = styled.div `
 display: grid;
-grid: repeat(10, 200px) / auto-flow;
+grid: repeat(2, 200px) / auto-flow;
 @media (min-width: 1024px){
-  grid: repeat(2, 200px) / auto-flow;
+  grid: repeat(6, 200px) / auto-flow;
 }
 `
 

@@ -55,6 +55,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   word-wrap: break-word;
+  Cursor: pointer;
   width: 17.18em;
   height: 28.12em;
   flex-direction: column;

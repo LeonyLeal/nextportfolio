@@ -1,4 +1,3 @@
-import React from "react";
 import { Title } from "../../styles/GlobalStyles";
 
 import { SocialContainer, SociaLink, SocialWrapper } from "./style";
@@ -6,15 +5,8 @@ import { SocialContainer, SociaLink, SocialWrapper } from "./style";
 function Socials() {
   return (
     <SocialContainer id="Section-B">
-      <Title>Socials</Title>
+      <Title>Redes</Title>
       <SocialWrapper>
-        <SociaLink
-          id="social-facebook"
-          target="_blank"
-          href="https://www.facebook.com/Leony9991/"
-        >
-          Facebook
-        </SociaLink>
         <SociaLink
           id="social-figma"
           target="_blank"
@@ -42,13 +34,6 @@ function Socials() {
           href="https://www.linkedin.com/in/leony-leal99/"
         >
           Linkedin
-        </SociaLink>
-        <SociaLink
-          id="social-twitter"
-          target="_blank"
-          href="https://twitter.com/Leony_1999"
-        >
-          Twitter
         </SociaLink>
       </SocialWrapper>
     </SocialContainer>

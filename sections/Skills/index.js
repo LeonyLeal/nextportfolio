@@ -1,6 +1,7 @@
-import React, { useRef } from "react";
+import { useRef, useState } from "react";
 import { palette, Title } from "../../styles/GlobalStyles";
 import Card from "../../components/Card";
+import Modal from "../../components/ModalCard";
 
 import { CardWrapper, SkillsContainer, Slide, SlideButton } from "./style";
 
@@ -14,6 +15,11 @@ import starsSVG from "../../public/img/cards/stars.svg";
 import frameworksSVG from "../../public/img/cards/frameworks.svg";
 
 function Skills() {
+  const [isModalCodeOpen, setIsModalCodeOpen] = useState(false);
+  const [isModalDevopsOpen, setIsModalDevopsOpen] = useState(false);
+  const [isModal2Open, setIsModal2Open] = useState(false);
+  const [isModal3Open, setIsModal3Open] = useState(false);
+  const [isModal4Open, setIsModal4Open] = useState(false);
   const slideRef = useRef(Function);
 
   const previous = () => {
@@ -43,25 +49,22 @@ function Skills() {
         <CardWrapper ref={slideRef} id="slides">
           <Card
             wave={cardRedSVG.src}
-            icon={htmlSVG.src}
             card_fill={palette.cards.background.red}
+            icon={htmlSVG.src}
             shadow={palette.cards.border.red}
             shadow_hover={palette.cards.border.selectedRed}
+            onClick={() => setIsModalCodeOpen(true)}
           >
-            {
-              "Conhecimentos em HTML e CSS avançados, sabendo bastante as tags e montagem de estruturas, estilização de páginas tanto manual com o próprio css quanto com alguma biblioteca como Bootstrap, Material, Vuetify etc... "
-            }
           </Card>
           <Card
             wave={cardGreenSVG.src}
-            icon={designSVG.src}
             card_fill={palette.cards.background.green}
+            icon={designSVG.src}
             shadow={palette.cards.border.green}
             shadow_hover={palette.cards.border.selectedGreen}
+            onClick={() => setIsModalDevopsOpen(true)}
           >
-            {
-              "Prototipação é a chave de uma boa visualização do que se quer construir tanto na parte de HTML quanto no css ou em outra engine de estilizção, utilizo bastante o Figma para UX e UI dos meus projetos, inclusive nesse portifólio "
-            }
+            {}
           </Card>
           <Card
             wave={cardBlueSVG.src}
@@ -69,10 +72,9 @@ function Skills() {
             card_fill={palette.cards.background.blue}
             shadow={palette.cards.border.blue}
             shadow_hover={palette.cards.border.selectedBlue}
+            onClick={() => setIsModal2Open(true)}
           >
-            {
-              "Em cada código que eu faço/refatoro eu levo o desenvolvimento agil comigo, tenho muito apreço pelos livros do Robert C. martin(uncle bob) que me passou muitos conhecimentos relacionados a desenvolvimento agil, Código limpo. "
-            }
+            {}
           </Card>
           <Card
             wave={cardPurpleSVG.src}
@@ -80,13 +82,43 @@ function Skills() {
             card_fill={palette.cards.background.purple}
             shadow={palette.cards.border.purple}
             shadow_hover={palette.cards.border.selectedPurple}
+            onClick={() => setIsModal3Open(true)}
           >
-            {
-              "Estudei diversos Frameworks, porém Django, Vue.js e React.js/Next.js são os que eu mais consegui tirar proveito e ter avanços, Django é um ótimo framework para fazer Api e vue.js React/next.js são ótimos para fazer um frontend bonito e eficiente"
-            }
+            {}
           </Card>
         </CardWrapper>
       </Slide>
+
+      <Modal
+        isOpen={isModalCodeOpen}
+        onClose={() => setIsModalCodeOpen(false)}
+        backColor={palette.cards.background.red}
+        icon={htmlSVG.src}
+        shadow={palette.cards.border.selectedRed}
+      >
+      </Modal>
+      <Modal
+        isOpen={isModalDevopsOpen}
+        onClose={() => setIsModalDevopsOpen(false)}
+        backColor={palette.cards.background.green}
+        icon={htmlSVG.src}
+        shadow={palette.cards.border.selectedGreen}
+      ></Modal>
+
+      <Modal
+        isOpen={isModal2Open}
+        onClose={() => setIsModal2Open(false)}
+        backColor={palette.cards.background.blue}
+        icon={htmlSVG.src}
+        shadow={palette.cards.border.selectedBlue}
+      ></Modal>
+      <Modal
+        isOpen={isModal3Open}
+        onClose={() => setIsModal3Open(false)}
+        backColor={palette.cards.background.purple}
+        icon={htmlSVG.src}
+        shadow={palette.cards.border.selectedPurple}
+      ></Modal>
     </SkillsContainer>
   );
 }
