@@ -53,8 +53,9 @@ export async function getStaticProps() {
     "Authorization": `token ${token}`,
     "Accept": "application/vnd.github.v3+json"
   }});
-  const repos = await res.json() ?? [];
-  const profile = await resProfile.json() ?? [];
+  const resRepos = await res.json()
+  const repos = Array.isArray(resRepos) ? resRepos: []
+  const profile = await resProfile.json();
   console.log(repos);
   console.log("Anos ", AnosExperiencia)
   console.log("Comandos ", comando)
