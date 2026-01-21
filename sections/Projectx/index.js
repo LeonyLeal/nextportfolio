@@ -10,7 +10,7 @@ function Projectxs(props) {
         {props.repos?.filter(
             (item) =>
               !item.topics.some((topic) =>
-                props.ForbiddenTopics.includes(topic),
+                props.forbiddenTopics.includes(topic),
               ),
           ).map((repo) => (
             <ProjectContainer key={repo.id} id={repo.name}>

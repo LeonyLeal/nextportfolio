@@ -7,14 +7,14 @@ import {
   Content,
   ContentWrapper,
   Name,
-  Profile,
   ProfileWrapper,
+  Profile,
   TextWrapper,
 } from "./style";
 import { Carousel } from "../../components/CarouselMemo";
-import rodapeComandos from "../../constants/commands"
 
-export default function AboutMe({ AnosExperiencia, comando,  owner }) {
+
+export default function AboutMe({ yearsExperience, command,  profile }) {
   return (
     <ContentWrapper id="Section-A">
       <Title id="Who">Sobre mim</Title>
@@ -24,7 +24,7 @@ export default function AboutMe({ AnosExperiencia, comando,  owner }) {
           <AboutMeWrapper id="About_Me_Wrapper">
             <TextWrapper id="Text_Wrapper">
               <Text id="Description">
-                  Atuo no mercado de trabalho com desenvolvimento de software <strong>há {AnosExperiencia}  anos</strong>, e estudando desde 2018.
+                  Atuo no mercado de trabalho com desenvolvimento de software <strong>há {yearsExperience}  anos</strong>, e estudando desde 2018.
                   Tenho experiência no desenvolvimento de sistemas distribuídos,
                   envolvendo front-end, back-end, testes e infraestrutura.
                   Trabalho com arquiteturas monolíticas e orientadas a serviços,
@@ -35,13 +35,13 @@ export default function AboutMe({ AnosExperiencia, comando,  owner }) {
                   containerização com <strong>Docker</strong> e pipelines de <strong>CI/CD</strong>.
               </Text>
               <Span id="Phrase">
-                {comando}
+                {command}
               </Span>
             </TextWrapper>
             <ProfileWrapper id="DivWrapper">
               <Profile
                 alt="Foto Perfil"
-                src={owner.avatar_url}
+                src={profile.avatar_url}
                 id="Profile_Photo"
               />
               <Carousel />
