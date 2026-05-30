@@ -61,7 +61,7 @@ export default function Projectxs({ repos = [], forbiddenTopics }: ProjectsProps
               Ver GitHub
             </a>
             <a
-              href="https://www.linkedin.com/in/leony-leal99/"
+              href="https://www.linkedin.com/in/leony99/"
               target="_blank"
               rel="noreferrer"
               className="rounded bg-(--color-secondary) px-5 py-2 text-base font-semibold text-(--color-primary)! no-underline transition hover:opacity-80"

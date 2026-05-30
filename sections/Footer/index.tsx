@@ -8,7 +8,7 @@ const internalLinks = [
 
 const externalLinks = [
   ["GitHub", "https://www.github.com/LeonyLeal"],
-  ["LinkedIn", "https://www.linkedin.com/in/leony-leal99/"],
+  ["LinkedIn", "https://www.linkedin.com/in/leony99/"],
 ];
 
 export default function Footer() {

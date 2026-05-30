@@ -19,7 +19,7 @@ const socials = [
   },
   {
     label: "Linkedin",
-    href: "https://www.linkedin.com/in/leony-leal99/",
+    href: "https://www.linkedin.com/in/leony99/",
     className:
       "bg-[image:var(--social-linkedin)] hover:bg-[image:var(--social-linkedin-fill)]",
   },
