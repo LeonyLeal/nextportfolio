@@ -1,0 +1,268 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root,
+[data-theme="dark"] {
+  --color-primary: #252525;
+  --color-secondary: #f4f4f4;
+  --color-scroll: rgba(0, 0, 0, 0.5);
+  --about-bg: linear-gradient(
+    180deg,
+    rgba(255, 0, 184, 0) 0%,
+    #ff00b8 17.19%,
+    #ff007a 80.73%,
+    rgba(255, 0, 122, 0) 100%
+  );
+  --bubble-bg: radial-gradient(
+    50% 50% at 50% 50%,
+    #cc0092 0%,
+    #ff4dcc 87.5%
+  );
+}
+
+[data-theme="light"] {
+  --color-primary: #f7f8fb;
+  --color-secondary: #20242c;
+  --color-scroll: rgba(32, 36, 44, 0.35);
+  --about-bg: linear-gradient(
+    180deg,
+    rgba(129, 140, 248, 0) 0%,
+    #8b9cf6 17.19%,
+    #38bdf8 80.73%,
+    rgba(56, 189, 248, 0) 100%
+  );
+  --bubble-bg: radial-gradient(
+    50% 50% at 50% 50%,
+    #2563eb 0%,
+    #60a5fa 87.5%
+  );
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-scroll);
+  border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden !important;
+  background: var(--color-primary);
+  scroll-padding-top: 5rem;
+}
+
+body {
+  margin: 0;
+  overflow: clip;
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  font-family: Nunito, system-ui, sans-serif;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: var(--color-secondary);
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+@keyframes cardInOut {
+  0% {
+    top: 2rem;
+    right: calc(50% - 3rem);
+    left: calc(50% - 3rem);
+    height: 6em;
+    border-radius: 50%;
+  }
+  100% {
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1;
+    border-radius: 1em;
+  }
+}
+
+@keyframes cardOutIn {
+  0% {
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1;
+    border-radius: 1em;
+  }
+  100% {
+    top: 2rem;
+    right: calc(50% - 3rem);
+    left: calc(50% - 3rem);
+    height: 6em;
+    border-radius: 50%;
+  }
+}
+
+@keyframes cardFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-1em);
+  }
+}
+
+@keyframes cardFadeOut {
+  0% {
+    transform: translateY(-1em);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalFadeOut {
+  0% {
+    transform: translate(0, -1em);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes bubbleFloat {
+  0% {
+    transform: translate(var(--bubble-drift-start), 80px);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.35;
+  }
+  32% {
+    opacity: 0.9;
+  }
+  68% {
+    opacity: 0.85;
+  }
+  88% {
+    opacity: 0.25;
+  }
+  to {
+    transform: translate(var(--bubble-drift-end), -520px);
+    opacity: 0;
+  }
+}
+
+@keyframes navOutIn {
+  0% {
+    opacity: 0;
+    background: var(--color-primary);
+    transform: translate(0%, -200%);
+  }
+  100% {
+    opacity: 1;
+    background-size: contain;
+    transform: translate(0%, 0%);
+  }
+}
+
+@keyframes navInOut {
+  0% {
+    transform: translate(0%, -200%);
+  }
+  75% {
+    visibility: hidden;
+    background-color: transparent;
+    transform: translate(0%, -100%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  user-select: none;
+}
+
+@media (min-width: 600px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+.skill-card:hover .skill-card-bg {
+  animation: cardInOut 300ms forwards;
+  z-index: 1;
+}
+
+.skill-card:hover .skill-card-icon {
+  box-shadow: 0 0 5px 4px var(--shadow-hover);
+  animation: cardFadeIn 300ms forwards;
+}
+
+.skill-card-bg {
+  animation: cardOutIn 300ms forwards;
+}
+
+.skill-card-icon {
+  animation: cardFadeOut 300ms forwards;
+}
+
+.modal-icon {
+  animation: modalFadeOut 300ms forwards;
+}
+
+.bubble {
+  animation: bubbleFloat var(--bubble-duration) linear infinite;
+  animation-delay: var(--bubble-delay);
+}
+
+.about-carousel-word {
+  animation:
+    carouselEnter 900ms ease-out forwards,
+    carouselExit 800ms ease-in 2200ms forwards;
+}
+
+@keyframes carouselEnter {
+  from {
+    opacity: 0;
+    transform: translateX(-1em);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes carouselExit {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(1em);
+  }
+}
