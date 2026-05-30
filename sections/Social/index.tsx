@@ -19,7 +19,7 @@ const socials = [
   },
   {
     label: "Linkedin",
-    href: "https://www.linkedin.com/in/leony99/",
+    href: "https://www.linkedin.com/in/leony-leal99/",
     className:
       "bg-[image:var(--social-linkedin)] hover:bg-[image:var(--social-linkedin-fill)]",
   },
@@ -29,7 +29,7 @@ export default function Socials() {
   return (
     <section id="Section-B" className="flex scroll-mt-20 flex-col items-center">
       <h1 className="section-title">Redes</h1>
-      <div className="grid grid-cols-1 gap-x-12 gap-y-5 min-[320px]:grid-cols-2 sm:gap-x-16 sm:gap-y-6">
+      <div className="grid grid-cols-1 gap-x-12 gap-y-5 min-[320px]:grid-cols-2 sm:gap-x-16 sm:gap-y-6 pt-10">
         {socials.map((social) => (
           <a
             key={social.href}

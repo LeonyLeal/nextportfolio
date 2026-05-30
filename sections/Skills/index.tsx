@@ -26,7 +26,7 @@ type Skill = {
 
 const skills: Skill[] = [
   {
-    title: "Back-end e APIs",
+    title: "Back-end",
     summary:
       "Construção de APIs, autenticação e regras de negócio com foco em segurança, performance e manutenção.",
     wave: cardRedSVG.src,
@@ -74,7 +74,7 @@ const skills: Skill[] = [
     ),
   },
   {
-    title: "Front-end de Produto",
+    title: "Front-end",
     summary:
       "Interfaces responsivas em React, Next.js e TypeScript, com atenção para usabilidade e organização.",
     wave: cardBlueSVG.src,
@@ -98,7 +98,7 @@ const skills: Skill[] = [
     ),
   },
   {
-    title: "Entrega, Infra e DevOps",
+    title: "Infra e DevOps",
     summary:
       "Deploy, containers, pipelines e servidores para levar aplicações do desenvolvimento à produção.",
     wave: cardPurpleSVG.src,
