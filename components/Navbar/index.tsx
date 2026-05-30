@@ -45,7 +45,7 @@ export default function Navbar({ onChangeTheme }: NavbarProps) {
         </div>
       </nav>
 
-      <div className="fixed inset-x-0 top-0 z-1001 mx-4 flex h-fit flex-row flex-wrap justify-between sm:hidden">
+      <div className="fixed inset-x-0 top-6 z-1001 mx-4 flex h-fit flex-row flex-wrap justify-between sm:hidden">
         <button
           type="button"
           aria-label="Abrir menu"
