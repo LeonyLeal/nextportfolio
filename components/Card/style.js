@@ -55,10 +55,9 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   word-wrap: break-word;
-  Cursor: pointer;
+  cursor: pointer;
   width: 17.18em;
   height: 28.12em;
-  flex-direction: column;
   z-index: 1;
   margin: 3em 0.7em;
   border-radius: 1em;
@@ -100,15 +99,30 @@ export const Svg = styled.div`
   box-shadow: 0px 0px 5px 4px ${(props) => props.shadow};
 `;
 
-export const Description = styled.p`
+export const Description = styled.div`
   position: absolute;
-  margin: 15em 0;
-  max-width: 15em;
+  margin: 13.5em 0;
+  width: 14.5em;
+  min-height: 8em;
+  padding: 0.85em 0.7em;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.1);
   color: #f2f2f2;
   z-index: 100;
   text-align: center;
   user-select: none;
-  -webkit-user-drag:none;
+  -webkit-user-drag: none;
+
+  > h2 {
+    margin: 0 0 0.65em;
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  > p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.35;
+  }
 `;

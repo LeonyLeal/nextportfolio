@@ -24,9 +24,9 @@ export const Container = styled.div`
   border-radius: 1em;
   max-width: 90%;
   width: 32em;
-  height: 47em;
-  min-height:400px;
-  overflow-y:scroll;
+  max-height: 85vh;
+  min-height: 400px;
+  overflow-y: auto;
   border: 2px solid ${(props) => props.theme.colors.secondary};
   background: linear-gradient(
      rgba(0, 0, 0, 0.3),
@@ -40,42 +40,54 @@ export const Container = styled.div`
   inset 0 -1px 0 rgba(0, 0, 0, 0.1),
   inset 0 0 8px 4px rgba(0, 0, 0, 0.4);
   @media (min-width: 800px) {
-  width: 40em;
-  }
-  @media (min-width: 1200px) {
-  overflow-y:clip;
+    width: 40em;
   }
 `;
 
 export const CloseButton = styled.button`
   background: none;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
   border: none;
-  font-size: 18px;
+  font-size: 28px;
+  line-height: 1;
   cursor: pointer;
   float: right;
   :hover {
-    color:rgba(255,255,255,1);
+    color: rgba(255, 255, 255, 1);
   }
 `;
 
 export const ModalWrapper = styled.div`
-display:flex;
-flex-direction:column;
-width:100%;
-height:100%;
-align-items:center;
- > div {
-  height:fit-content;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+
+  > div {
+    height: fit-content;
+  }
+`;
+
+export const ModalContent = styled.div`
+  color: white;
+  max-width: 34em;
+  text-align: center;
+
+  > h2 {
+    margin: 1.2em 0 0.8em;
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
   > p {
-      height:fit-content;
-      padding:0;
-      margin:14px;
-      text-align:center;
-      color:white;
-      }
-    }
-`
+    height: fit-content;
+    padding: 0;
+    margin: 14px;
+    font-size: 1.05rem;
+    line-height: 1.55;
+  }
+`;
 
 export const Svg = styled.div`
   margin-top: 2em;

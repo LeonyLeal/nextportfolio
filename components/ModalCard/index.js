@@ -1,4 +1,11 @@
-import { Overlay, Container, CloseButton, ModalWrapper, Svg } from "./style";
+import {
+  Overlay,
+  Container,
+  CloseButton,
+  ModalWrapper,
+  ModalContent,
+  Svg,
+} from "./style";
 
 export default function Modal({
   isOpen,
@@ -14,7 +21,9 @@ export default function Modal({
   return (
     <Overlay onClick={onClose}>
       <Container onClick={(e) => e.stopPropagation()} backColor={backColor}>
-        <CloseButton onClick={onClose}>✖</CloseButton>
+        <CloseButton onClick={onClose} aria-label="Fechar modal">
+          &times;
+        </CloseButton>
         <ModalWrapper>
           <div>
             <Svg
@@ -24,9 +33,7 @@ export default function Modal({
               shadow_hover={shadow_hover}
             />
           </div>
-          <div>
-            <p>{children}</p>
-          </div>
+          <ModalContent>{children}</ModalContent>
         </ModalWrapper>
       </Container>
     </Overlay>

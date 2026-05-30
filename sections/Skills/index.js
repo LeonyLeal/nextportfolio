@@ -14,13 +14,134 @@ import designSVG from "../../public/img/cards/design.svg";
 import starsSVG from "../../public/img/cards/stars.svg";
 import frameworksSVG from "../../public/img/cards/frameworks.svg";
 
+const skills = [
+  {
+    title: "Back-end e APIs",
+    description: "APIs, regras de negócio e integrações pensadas para sistemas reais.",
+    wave: cardRedSVG.src,
+    cardFill: palette.cards.background.red,
+    icon: htmlSVG.src,
+    shadow: palette.cards.border.red,
+    shadowHover: palette.cards.border.selectedRed,
+  },
+  {
+    title: "Dados e Consistência",
+    description: "Modelagem, consultas e automações para dados confiáveis.",
+    wave: cardGreenSVG.src,
+    cardFill: palette.cards.background.green,
+    icon: designSVG.src,
+    shadow: palette.cards.border.green,
+    shadowHover: palette.cards.border.selectedGreen,
+  },
+  {
+    title: "Front-end de Produto",
+    description: "Interfaces responsivas com React, Next.js e TypeScript.",
+    wave: cardBlueSVG.src,
+    cardFill: palette.cards.background.blue,
+    icon: starsSVG.src,
+    shadow: palette.cards.border.blue,
+    shadowHover: palette.cards.border.selectedBlue,
+  },
+  {
+    title: "Entrega, Infra e DevOps",
+    description: "Deploy, containers e automação para tirar sistemas do localhost.",
+    wave: cardPurpleSVG.src,
+    cardFill: palette.cards.background.purple,
+    icon: frameworksSVG.src,
+    shadow: palette.cards.border.purple,
+    shadowHover: palette.cards.border.selectedPurple,
+  },
+];
+
 function Skills() {
-  const [isModalCodeOpen, setIsModalCodeOpen] = useState(false);
-  const [isModalDevopsOpen, setIsModalDevopsOpen] = useState(false);
-  const [isModal2Open, setIsModal2Open] = useState(false);
-  const [isModal3Open, setIsModal3Open] = useState(false);
-  const [isModal4Open, setIsModal4Open] = useState(false);
+  const [isBackendModalOpen, setIsBackendModalOpen] = useState(false);
+  const [isDataModalOpen, setIsDataModalOpen] = useState(false);
+  const [isFrontendModalOpen, setIsFrontendModalOpen] = useState(false);
+  const [isDeliveryModalOpen, setIsDeliveryModalOpen] = useState(false);
   const slideRef = useRef(Function);
+
+  const skillCards = [
+    {
+      ...skills[0],
+      isOpen: isBackendModalOpen,
+      openModal: () => setIsBackendModalOpen(true),
+      closeModal: () => setIsBackendModalOpen(false),
+      content: (
+        <>
+          <p>
+            Construo APIs e fluxos de back-end pensando no uso real do sistema:
+            regras de negócio claras, contratos previsíveis e integrações que
+            continuam legíveis depois que o projeto cresce.
+          </p>
+          <p>
+            Tenho experiência com .NET, Entity Framework, DTOs, mappers,
+            autenticação, JWT e gerenciamento de cookies, sempre conectando
+            segurança, performance e manutenção em uma mesma decisão técnica.
+          </p>
+        </>
+      ),
+    },
+    {
+      ...skills[1],
+      isOpen: isDataModalOpen,
+      openModal: () => setIsDataModalOpen(true),
+      closeModal: () => setIsDataModalOpen(false),
+      content: (
+        <>
+          <p>
+            Trabalho com banco de dados como parte central da arquitetura, não
+            apenas como lugar para salvar informação. A modelagem precisa apoiar
+            o produto, proteger consistência e facilitar evoluções futuras.
+          </p>
+          <p>
+            Atuo com SQL Server, abordagem DB First e conceitos de ORM, além de
+            queries complexas, transactions, procedures e triggers para
+            automatizar rotinas e manter a lógica de dados confiável.
+          </p>
+        </>
+      ),
+    },
+    {
+      ...skills[2],
+      isOpen: isFrontendModalOpen,
+      openModal: () => setIsFrontendModalOpen(true),
+      closeModal: () => setIsFrontendModalOpen(false),
+      content: (
+        <>
+          <p>
+            Desenvolvo interfaces com foco em produto: telas responsivas,
+            componentes reutilizáveis e experiências que equilibram clareza,
+            performance e organização do código.
+          </p>
+          <p>
+            Uso React, Next.js, TypeScript, SSR, Redux, React Query, Tailwind,
+            MUI, Ant Design, zod e react-hook-form para criar fluxos consistentes,
+            formulários robustos e layouts mobile-first.
+          </p>
+        </>
+      ),
+    },
+    {
+      ...skills[3],
+      isOpen: isDeliveryModalOpen,
+      openModal: () => setIsDeliveryModalOpen(true),
+      closeModal: () => setIsDeliveryModalOpen(false),
+      content: (
+        <>
+          <p>
+            Gosto de fechar o ciclo entre código e produção. Além de desenvolver,
+            preparo ambientes, organizo deploys e automatizo partes do processo
+            para reduzir trabalho manual e risco operacional.
+          </p>
+          <p>
+            Tenho vivencia com Docker, Docker Swarm, Dockerfile, Docker Compose,
+            Portainer, Nginx Proxy Manager, Jenkins, GitLab CI/CD, VPS Linux e
+            Windows, IIS e estudos aplicados em AWS com EC2, S3 e SQS.
+          </p>
+        </>
+      ),
+    },
+  ];
 
   const previous = () => {
     if (slideRef.current.scrollLeft < 18) {
@@ -47,78 +168,36 @@ function Skills() {
           &#62;
         </SlideButton>
         <CardWrapper ref={slideRef} id="slides">
-          <Card
-            wave={cardRedSVG.src}
-            card_fill={palette.cards.background.red}
-            icon={htmlSVG.src}
-            shadow={palette.cards.border.red}
-            shadow_hover={palette.cards.border.selectedRed}
-            onClick={() => setIsModalCodeOpen(true)}
-          >
-          </Card>
-          <Card
-            wave={cardGreenSVG.src}
-            card_fill={palette.cards.background.green}
-            icon={designSVG.src}
-            shadow={palette.cards.border.green}
-            shadow_hover={palette.cards.border.selectedGreen}
-            onClick={() => setIsModalDevopsOpen(true)}
-          >
-            {}
-          </Card>
-          <Card
-            wave={cardBlueSVG.src}
-            icon={starsSVG.src}
-            card_fill={palette.cards.background.blue}
-            shadow={palette.cards.border.blue}
-            shadow_hover={palette.cards.border.selectedBlue}
-            onClick={() => setIsModal2Open(true)}
-          >
-            {}
-          </Card>
-          <Card
-            wave={cardPurpleSVG.src}
-            icon={frameworksSVG.src}
-            card_fill={palette.cards.background.purple}
-            shadow={palette.cards.border.purple}
-            shadow_hover={palette.cards.border.selectedPurple}
-            onClick={() => setIsModal3Open(true)}
-          >
-            {}
-          </Card>
+          {skillCards.map((skill) => (
+            <Card
+              key={skill.title}
+              wave={skill.wave}
+              card_fill={skill.cardFill}
+              icon={skill.icon}
+              shadow={skill.shadow}
+              shadow_hover={skill.shadowHover}
+              onClick={skill.openModal}
+            >
+              <h2>{skill.title}</h2>
+              <p>{skill.description}</p>
+            </Card>
+          ))}
         </CardWrapper>
       </Slide>
 
-      <Modal
-        isOpen={isModalCodeOpen}
-        onClose={() => setIsModalCodeOpen(false)}
-        backColor={palette.cards.background.red}
-        icon={htmlSVG.src}
-        shadow={palette.cards.border.selectedRed}
-      >
-      </Modal>
-      <Modal
-        isOpen={isModalDevopsOpen}
-        onClose={() => setIsModalDevopsOpen(false)}
-        backColor={palette.cards.background.green}
-        icon={htmlSVG.src}
-        shadow={palette.cards.border.selectedGreen}
-      ></Modal>
-
-      <Modal
-        isOpen={isModal2Open}
-        onClose={() => setIsModal2Open(false)}
-        backColor={palette.cards.background.blue}
-        icon={htmlSVG.src}
-        shadow={palette.cards.border.selectedBlue}
-      ></Modal>
-      <Modal
-        isOpen={isModal3Open}
-        onClose={() => setIsModal3Open(false)}
-        backColor={palette.cards.background.purple}
-        icon={htmlSVG.src}
-        shadow={palette.cards.border.selectedPurple}
-      ></Modal>
+      {skillCards.map((skill) => (
+        <Modal
+          key={skill.title}
+          isOpen={skill.isOpen}
+          onClose={skill.closeModal}
+          backColor={skill.cardFill}
+          icon={skill.icon}
+          shadow={skill.shadowHover}
+        >
+          <h2>{skill.title}</h2>
+          {skill.content}
+        </Modal>
+      ))}
     </SkillsContainer>
   );
 }
