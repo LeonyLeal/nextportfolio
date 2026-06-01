@@ -39,7 +39,7 @@ function Curriculo({ publicLinks }: CurriculoProps) {
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <Link
               href="/"
-              className="w-fit rounded border border-(--color-secondary)/30 px-4 py-2 text-sm font-semibold no-underline transition hover:bg-(--color-secondary) hover:text-(--color-primary)"
+              className="w-fit rounded border border-(--color-secondary)/30 px-4 py-2 text-sm font-semibold no-underline transition hover:bg-(--color-secondary) hover:text-(--color-primary)!"
             >
               Voltar ao portfólio
             </Link>
