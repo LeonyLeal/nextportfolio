@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { CSSProperties } from "react";
 import { Carousel } from "../../components/CarouselMemo";
 import type { GithubProfile } from "../../service/github";
@@ -203,9 +204,15 @@ export default function AboutMe({
                 height={240}
                 unoptimized
                 id="Profile_Photo"
-                className="h-auto w-[calc(100%-50px)] max-w-50 select-none rounded-[10em] border-[5px] border-white/80 [-webkit-user-drag:none] sm:w-60 sm:max-w-none"
+                className="h-auto w-[calc(100%-50px)] max-w-50 select-none rounded-[10em] border-[5px] border-(--color-secondary)/80 [-webkit-user-drag:none] sm:w-60 sm:max-w-none"
               />
               <Carousel />
+              <Link
+                href="/curriculo"
+                className="mt-4 rounded border border-(--color-secondary)/70 px-5 py-2 text-base font-bold text-(color-primary)! no-underline transition hover:bg-(color-primary)/15"
+              >
+                Ver currículo
+              </Link>
             </div>
           </div>
         </div>

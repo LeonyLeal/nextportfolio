@@ -1,12 +1,18 @@
 import Apps from "../../components/apps";
+import type { PublicLinks } from "../../data/publicLinks";
 import type { GithubRepo } from "../../service/github";
 
 type ProjectsProps = {
   repos?: GithubRepo[];
   forbiddenTopics: string[];
+  publicLinks: PublicLinks;
 };
 
-export default function Projectxs({ repos = [], forbiddenTopics }: ProjectsProps) {
+export default function Projectxs({
+  repos = [],
+  forbiddenTopics,
+  publicLinks,
+}: ProjectsProps) {
   const visibleRepos = repos.filter(
     (repo) => !repo.topics.some((topic) => forbiddenTopics.includes(topic)),
   );
@@ -53,7 +59,7 @@ export default function Projectxs({ repos = [], forbiddenTopics }: ProjectsProps
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <a
-              href="https://www.github.com/LeonyLeal"
+              href={publicLinks.github}
               target="_blank"
               rel="noreferrer"
               className="rounded border border-(--color-secondary) px-5 py-2 text-base font-semibold no-underline transition hover:bg-(--color-secondary) hover:text-(--color-primary)!"
@@ -61,7 +67,7 @@ export default function Projectxs({ repos = [], forbiddenTopics }: ProjectsProps
               Ver GitHub
             </a>
             <a
-              href="https://www.linkedin.com/in/leony99/"
+              href={publicLinks.linkedin}
               target="_blank"
               rel="noreferrer"
               className="rounded bg-(--color-secondary) px-5 py-2 text-base font-semibold text-(--color-primary)! no-underline transition hover:opacity-80"

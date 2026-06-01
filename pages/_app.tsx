@@ -4,6 +4,7 @@ import type { NextPage } from "next";
 import type { CSSProperties } from "react";
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
+import ThemeToggle from "../components/ThemeToggle";
 import "../styles/globals.css";
 import { themes, type ThemeName } from "../styles/theme";
 
@@ -11,6 +12,7 @@ type ThemeVariables = CSSProperties & Record<`--${string}`, string>;
 
 type PortfolioPage = NextPage & {
   hideNavbar?: boolean;
+  showThemeToggle?: boolean;
 };
 
 type PortfolioAppProps = AppProps & {
@@ -77,6 +79,12 @@ export default function MyApp({ Component, pageProps }: PortfolioAppProps) {
         />
       </Head>
       {!Component.hideNavbar && <Navbar onChangeTheme={onThemeClick} />}
+      {Component.showThemeToggle && (
+        <ThemeToggle
+          onClick={onThemeClick}
+          className="fixed top-6 right-6 z-1001"
+        />
+      )}
       <Component {...pageProps} />
     </div>
   );

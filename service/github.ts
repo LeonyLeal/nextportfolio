@@ -18,7 +18,8 @@ export type GithubData = {
 let cache: GithubData | null = null;
 let lastFetch = 0;
 
-const CACHE_TTL = 1000 * 60 * 15;
+const CACHE_TTL: number = 1000 * 60 * 15;
+const GITHUB_API_URL: string = process.env.GITHUB_API_URL ?? "";
 
 const parseForbiddenTopics = () => {
   const value = process.env.FORBIDDEN_TOPICS;
@@ -66,8 +67,8 @@ export async function getGithubData(): Promise<GithubData> {
   }
 
   const [reposRes, profileRes] = await Promise.all([
-    fetch("https://api.github.com/users/LeonyLeal/repos", { headers }),
-    fetch("https://api.github.com/users/LeonyLeal", { headers }),
+    fetch(GITHUB_API_URL + "/repos", { headers }),
+    fetch(GITHUB_API_URL, { headers }),
   ]);
 
   const reposJson: unknown = await reposRes.json();

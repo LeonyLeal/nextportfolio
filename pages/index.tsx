@@ -1,5 +1,6 @@
 import type { GetServerSideProps } from "next";
 import rodapeComandos from "../constants/commands";
+import { getPublicLinks, type PublicLinks } from "../data/publicLinks";
 import Projectxs from "../sections/Projectx";
 import AboutMe from "../sections/AboutMe";
 import Footer from "../sections/Footer";
@@ -11,6 +12,7 @@ import { getRandomCommand, getYearsExperience } from "../service/fancy";
 type HomeProps = GithubData & {
   command: string;
   yearsExperience: number;
+  publicLinks: PublicLinks;
 };
 
 export default function Home({
@@ -19,6 +21,7 @@ export default function Home({
   command,
   yearsExperience,
   forbiddenTopics,
+  publicLinks,
 }: HomeProps) {
   return (
     <>
@@ -27,10 +30,14 @@ export default function Home({
         command={command}
         yearsExperience={yearsExperience}
       />
-      <Socials />
+      <Socials publicLinks={publicLinks} />
       <Skills />
-      <Projectxs repos={repos} forbiddenTopics={forbiddenTopics} />
-      <Footer />
+      <Projectxs
+        repos={repos}
+        forbiddenTopics={forbiddenTopics}
+        publicLinks={publicLinks}
+      />
+      <Footer publicLinks={publicLinks} />
     </>
   );
 }
@@ -49,6 +56,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
       repos: githubData.repos,
       profile: githubData.profile,
       forbiddenTopics: githubData.forbiddenTopics,
+      publicLinks: getPublicLinks(),
     },
   };
 };

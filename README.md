@@ -1,34 +1,89 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next Portfolio
 
-## Getting Started
+Portfólio pessoal desenvolvido com Next.js, React, TypeScript e Tailwind CSS.
 
-First, run the development server:
+## Requisitos
+
+- Node.js 24 ou superior
+- Yarn 4
+
+## Configuração
+
+Crie um arquivo `.env` na raiz do projeto.
+
+Exemplo:
+
+```env
+GITHUB_TOKEN=seu_token_do_github
+FORBIDDEN_TOPICS=["private","hidden"]
+RESEND_API_KEY=sua_chave_da_resend
+CONTACT_TO=seu_email_de_destino
+CONTACT_FROM=Portfolio <contato@seudominio.com>
+NEXT_PUBLIC_TURNSTILE_SITE_KEY=sua_site_key_do_turnstile
+TURNSTILE_SECRET_KEY=sua_secret_key_do_turnstile
+```
+
+`GITHUB_TOKEN` é usado para consultar a API do GitHub com limite maior de requisições.
+
+`FORBIDDEN_TOPICS` define quais tópicos devem esconder repositórios da seção Github. Pode ser um JSON array ou uma lista separada por vírgula.
+
+As variáveis `RESEND_API_KEY`, `CONTACT_TO` e `CONTACT_FROM` são usadas pelo formulário de propostas no footer.
+
+As variáveis `NEXT_PUBLIC_TURNSTILE_SITE_KEY` e `TURNSTILE_SECRET_KEY` são usadas pela proteção anti-spam do formulário.
+
+## Instalação
 
 ```bash
-npm run dev
-# or
+yarn install
+```
+
+## Desenvolvimento
+
+```bash
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Depois acesse:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Build de produção
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+yarn build
+```
 
-## Learn More
+## Rodar build local
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+yarn start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Lint
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+yarn lint
+```
 
-## Deploy on Vercel
+## Estrutura principal
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `pages/`: rotas da aplicação
+- `sections/`: seções principais do portfólio
+- `components/`: componentes reutilizáveis
+- `constants/`: textos e comandos exibidos na interface
+- `data/`: dados estruturados usados por páginas internas, como o currículo
+- `service/`: integrações e helpers de dados
+- `styles/`: CSS global e tema
+- `public/`: assets estáticos
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Currículo público
+
+A página HTML do currículo fica em:
+
+```text
+http://localhost:3000/curriculo
+```
+
+Mantenha apenas informações públicas nessa página. Se quiser adicionar download de PDF, gere uma versão pública sanitizada antes de colocar o arquivo em `public/`.

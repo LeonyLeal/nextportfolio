@@ -17,7 +17,7 @@ const themeScript = `
 
 export default function Document() {
   return (
-    <Html lang="pt-br">
+    <Html lang="pt-br" data-scroll-behavior="smooth">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/logo192.png" />

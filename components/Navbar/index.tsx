@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import ThemeToggle from "../ThemeToggle";
 
 type NavbarProps = {
   onChangeTheme: () => void;
@@ -52,19 +53,12 @@ export default function Navbar({ onChangeTheme }: NavbarProps) {
           onClick={() => setIsMenuOpen((current) => !current)}
           className="h-7.5 w-7.5 cursor-pointer bg-(image:--burger-icon) bg-center bg-no-repeat"
         />
-        <button
-          type="button"
-          aria-label="Alternar tema"
-          onClick={onChangeTheme}
-          className="h-[2.2rem] w-[2.2rem] cursor-pointer bg-(image:--theme-icon) bg-contain bg-center bg-no-repeat hover:bg-(image:--theme-icon-fill)"
-        />
+        <ThemeToggle onClick={onChangeTheme} />
       </div>
 
-      <button
-        type="button"
-        aria-label="Alternar tema"
+      <ThemeToggle
         onClick={onChangeTheme}
-        className="fixed top-[1.85rem] right-6 z-1001 hidden h-[2.2rem] w-[2.2rem] -translate-y-1/2 cursor-pointer bg-(image:--theme-icon) bg-contain bg-center bg-no-repeat hover:bg-(image:--theme-icon-fill) sm:block"
+        className="fixed top-[1.85rem] right-6 z-1001 hidden -translate-y-1/2 sm:block"
       />
     </>
   );

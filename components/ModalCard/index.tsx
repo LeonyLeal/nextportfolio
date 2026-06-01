@@ -60,7 +60,7 @@ export default function Modal({
     >
       <section
         style={style}
-        className="h-[100dvh] w-full overflow-y-auto overscroll-contain border-0 bg-[linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),var(--modal-bg)] px-6 py-5 shadow-[0_8px_32px_rgba(0,0,0,.1),inset_0_1px_0_rgba(0,0,0,.5),inset_0_-1px_0_rgba(0,0,0,.1),inset_0_0_8px_4px_rgba(0,0,0,.4)] backdrop-blur-sm sm:h-auto sm:max-h-[85dvh] sm:min-h-100 sm:w-[40em] sm:max-w-[90%] sm:rounded-2xl sm:border-2 sm:border-(--color-secondary) sm:p-8"
+        className="h-dvh w-full overflow-y-auto overscroll-contain border-0 bg-[linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),var(--modal-bg)] px-6 py-5 shadow-[0_8px_32px_rgba(0,0,0,.1),inset_0_1px_0_rgba(0,0,0,.5),inset_0_-1px_0_rgba(0,0,0,.1),inset_0_0_8px_4px_rgba(0,0,0,.4)] backdrop-blur-sm sm:h-auto sm:max-h-[85dvh] sm:min-h-100 sm:w-[40em] sm:max-w-[90%] sm:rounded-2xl sm:border-2 sm:border-(--color-secondary) sm:p-8"
         onClick={(event) => event.stopPropagation()}
         onWheel={(event) => event.stopPropagation()}
         role="dialog"
