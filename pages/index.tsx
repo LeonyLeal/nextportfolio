@@ -43,10 +43,13 @@ export default function Home({
 }
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
+  const experienceStartDate =
+    process.env.EXPERIENCE_START_DATE ?? "2022-11-01";
+
   const [githubData, command, yearsExperience] = await Promise.all([
     getGithubData(),
     getRandomCommand(rodapeComandos),
-    getYearsExperience("2022-11-01"),
+    getYearsExperience(experienceStartDate),
   ]);
 
   return {
