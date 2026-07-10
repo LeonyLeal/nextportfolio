@@ -1,6 +1,6 @@
 export const resume = {
   name: "Leony Leal",
-  role: "Desenvolvedor Fullstack Pleno",
+  role: "Desenvolvedor Fullstack Sênior",
   location: "Brasília, Brasil",
   links: [
     { label: "GitHub", key: "github" },

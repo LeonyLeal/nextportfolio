@@ -30,7 +30,7 @@ function Curriculo({ publicLinks }: CurriculoProps) {
         <title>Currículo - Leony Leal</title>
         <meta
           name="description"
-          content="Currículo de Leony Leal, Desenvolvedor Fullstack Pleno."
+          content="Currículo de Leony Leal, Desenvolvedor Fullstack Sênior."
         />
       </Head>
 
